@@ -6,17 +6,13 @@
 /*   By: scombat <scombat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/16 19:14:49 by scombat           #+#    #+#             */
-/*   Updated: 2014/03/18 14:45:59 by scombat          ###   ########.fr       */
+/*   Updated: 2014/03/18 16:55:48 by scombat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-
-/*
-**	includes
-*/
-#include <stddef.h>
+# include <stddef.h>
 
 /*
 **	defines
