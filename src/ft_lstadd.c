@@ -6,7 +6,7 @@
 /*   By: scombat <scombat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/18 13:54:57 by scombat           #+#    #+#             */
-/*   Updated: 2014/03/18 14:02:11 by scombat          ###   ########.fr       */
+/*   Updated: 2014/09/28 19:46:55 by scombat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	ft_lstadd(t_list **alst, t_list *new)
 {
-	t_list	*tmp;
-
 	if (new)
 	{
 		if (!(*alst))
