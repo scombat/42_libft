@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_fgetc.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scombat <scombat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/03/18 13:12:35 by scombat           #+#    #+#             */
-/*   Updated: 2015/12/17 22:48:38 by scombat          ###   ########.fr       */
+/*   Created: 2016/01/01 11:24:37 by scombat           #+#    #+#             */
+/*   Updated: 2016/01/01 11:34:56 by scombat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
-#include <unistd.h>
+# include "../includes/libft.h"
 
-void	ft_putendl_fd(char const *s, int fd)
+char    ft_fgetc(int fd)
 {
-    if (s)
-    {
-        write(fd, s, ft_strlen(s));
-        write(fd, "\n", 1);
-    }
+    char    *c;
+
+    c = ft_strnew(1);
+    if (read(fd, c, 1))
+        return (c[0]);
+    return (FALSE);
 }

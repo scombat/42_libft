@@ -6,7 +6,7 @@
 /*   By: scombat <scombat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/16 22:20:44 by scombat           #+#    #+#             */
-/*   Updated: 2014/09/28 19:50:53 by scombat          ###   ########.fr       */
+/*   Updated: 2015/12/18 00:02:13 by scombat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	if (s && f)
 	{	
 		i = 0;
+		str = ft_strnew(ft_strlen(s));
+		if (!str)
+			return (NULL);
 		tmp_s = (char *)(s);
 		while (tmp_s[i]) {
 			str[i] = (*f)(i, tmp_s[i]);

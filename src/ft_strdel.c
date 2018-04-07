@@ -6,7 +6,7 @@
 /*   By: scombat <scombat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/16 21:56:35 by scombat           #+#    #+#             */
-/*   Updated: 2014/03/16 22:00:07 by scombat          ###   ########.fr       */
+/*   Updated: 2015/12/16 00:23:45 by scombat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,5 @@
 
 void	ft_strdel(char **as)
 {
-	if (*as)
-		free(*as);
-	*as = NULL;
+    ft_memdel((void **)(as)); 
 }

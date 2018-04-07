@@ -6,17 +6,25 @@
 /*   By: scombat <scombat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/18 13:03:39 by scombat           #+#    #+#             */
-/*   Updated: 2014/03/18 13:07:24 by scombat          ###   ########.fr       */
+/*   Updated: 2015/12/17 23:59:38 by scombat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
-#include <unistd.h>
 
 void	ft_putnbr(int n)
 {
-	char	*str;
+    char num;
+    long nbr;
 
-	str = ft_itoa(n);
-	write(1, str, ft_strlen(str));
+    nbr = (long)(n);
+    if (nbr < 0)
+    {
+        ft_putchar('-');
+        nbr *= -1;
+    }
+    if (nbr > 9)
+        ft_putnbr(nbr / 10);
+    num = nbr % 10;
+    ft_putchar(num + '0');
 }

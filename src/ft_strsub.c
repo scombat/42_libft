@@ -6,7 +6,7 @@
 /*   By: scombat <scombat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/18 11:01:31 by scombat           #+#    #+#             */
-/*   Updated: 2014/03/18 11:16:39 by scombat          ###   ########.fr       */
+/*   Updated: 2018/04/06 15:38:11 by scombat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,12 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	char	*tmp_s;
 	int	i;
 
+	if (start == 0 && len == 0)
+		return ("");
 	if (!s || ((int)(ft_strlen(s) - (start + len)) < 0) || len == 0)
 		return (NULL);
 	rslt = NULL;
-	rslt = ft_strnew(ft_strlen(s) + 1);
+	rslt = ft_strnew(len);
 	if (!rslt)
 		return (NULL);
 	tmp_s = (char *)(s);

@@ -6,7 +6,7 @@
 /*   By: scombat <scombat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/18 12:59:26 by scombat           #+#    #+#             */
-/*   Updated: 2014/03/18 13:03:31 by scombat          ###   ########.fr       */
+/*   Updated: 2015/12/17 22:47:54 by scombat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 void	ft_putendl(char const *s)
 {
-	write(1, s, ft_strlen(s));
-	write(1, "\n", 1);
+    if (s)
+    {
+        write(1, s, ft_strlen(s));
+        write(1, "\n", 1);
+    }
 }

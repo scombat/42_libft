@@ -6,7 +6,7 @@
 /*   By: scombat <scombat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/18 13:17:34 by scombat           #+#    #+#             */
-/*   Updated: 2014/03/18 13:29:32 by scombat          ###   ########.fr       */
+/*   Updated: 2015/12/17 23:31:09 by scombat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 {
 	t_list	*new;
 
-	new = NULL;
 	new = (t_list *)malloc(sizeof(t_list));
 	if (!new)
 		return (NULL);
@@ -28,7 +27,10 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	}
 	else
 	{
-		new->content = (void *)(content);
+		new->content = ft_memalloc(content_size);
+		if (!new->content)
+			return (NULL);
+		ft_memcpy(new->content, content, content_size);
 		new->content_size = content_size;
 	}
 	new->next = NULL;

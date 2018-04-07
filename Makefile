@@ -6,7 +6,7 @@
 #    By: scombat <scombat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/03/16 18:52:36 by scombat           #+#    #+#              #
-#    Updated: 2014/09/28 20:18:49 by scombat          ###   ########.fr        #
+#    Updated: 2016/01/01 11:32:59 by scombat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,9 @@ SRC=	ft_atoi.c		ft_bzero.c		ft_isalnum.c	ft_isalpha.c		\
 		ft_strncmp.c	ft_strncpy.c	ft_strnequ.c	ft_strnew.c			\
 		ft_strnstr.c	ft_strrchr.c	ft_strrev.c		ft_strsplit.c		\
 		ft_strstr.c		ft_strsub.c		ft_strtrim.c	ft_tolower.c		\
-		ft_toupper.c
+		ft_toupper.c	ft_fopen.c		ft_readfile.c	ft_file_exists.c	\
+		ft_file.c		ft_fgetc.c		ft_file_get_contents.c
+
 
 OBJ= $(patsubst %.c, $(PATH_OBJ)/%.o, $(SRC))
 

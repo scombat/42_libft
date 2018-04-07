@@ -6,7 +6,7 @@
 /*   By: scombat <scombat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/17 16:33:53 by scombat           #+#    #+#             */
-/*   Updated: 2014/03/17 16:37:15 by scombat          ###   ########.fr       */
+/*   Updated: 2015/12/15 08:37:09 by scombat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)(s) + i);
 		i++;
 	}
+	if ( s[i] == '\0' && tmp_c == '\0' )
+		return ((char *)(s) + i);
 	return (NULL);
 }

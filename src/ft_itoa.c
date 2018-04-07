@@ -6,7 +6,7 @@
 /*   By: scombat <scombat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/18 12:39:19 by scombat           #+#    #+#             */
-/*   Updated: 2014/03/18 12:54:38 by scombat          ###   ########.fr       */
+/*   Updated: 2015/12/17 23:45:11 by scombat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,26 @@
 
 char	*ft_itoa(int n)
 {
-	char		*rslt;
-	long long int	tmp;
-	int		i;
+	int	i;
+	int	sign;
+	char	*s;
 
-	rslt = ft_strnew(12);
-	rslt = ft_memset(rslt, '\0', 12);
-	tmp = (n < 0) ? -n : n;
 	i = 0;
-	if (tmp == 0)
+	sign = n;
+	s = ft_strnew(12);
+	if (!s)
+		return (NULL);
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	if (sign < 0)
+		n = -n;
+	while (i == 0 || (n /= 10) > 0)
 	{
-		rslt[i] = '0';
-		return (rslt);
+		s[i++] = n % 10 + '0';
 	}
-	tmp *= 10;
-	while ((tmp /= 10) > 0)
-		rslt[i++] = (tmp % 10) + '0';
-	if (n < 0)
-		rslt[i++] = '-';
-	rslt = ft_strrev(rslt);
-	rslt[i] = '\0';
-	return (rslt);
+	if (sign < 0)
+		s[i++] = '-';
+	s[i] = '\0';
+	s = ft_strrev(s);
+	return (s);
 }

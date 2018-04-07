@@ -6,7 +6,7 @@
 /*   By: scombat <scombat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/18 14:12:20 by scombat           #+#    #+#             */
-/*   Updated: 2014/03/18 14:37:25 by scombat          ###   ########.fr       */
+/*   Updated: 2015/12/17 22:51:10 by scombat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 		return (lst);
 	tmp = f(lst);
 	new = ft_lstnew(tmp->content, tmp->content_size);
+	if (!lst)
+		return (NULL);
 	if (lst->next)
 		new->next = ft_lstmap(lst->next, f);
 	else

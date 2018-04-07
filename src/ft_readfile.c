@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_readfile.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scombat <scombat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/03/18 13:12:35 by scombat           #+#    #+#             */
-/*   Updated: 2015/12/17 22:48:38 by scombat          ###   ########.fr       */
+/*   Created: 2015/12/31 23:21:23 by scombat           #+#    #+#             */
+/*   Updated: 2018/04/07 11:46:58 by scombat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
-#include <unistd.h>
+# include "../includes/libft.h"
 
-void	ft_putendl_fd(char const *s, int fd)
+int     ft_readfile(char *filename)
 {
-    if (s)
+    char    *buffer;
+    int     fd;
+    size_t  resRead;
+
+    if ((fd = ft_fopen(filename, "r")) <= 0)
+        return (FALSE);
+    buffer = ft_strnew(2048);
+    while ((resRead = read(fd, buffer, 2048)) > 0)
     {
-        write(fd, s, ft_strlen(s));
-        write(fd, "\n", 1);
+        if (resRead < 2048)
+            buffer[resRead] = '\0';
+        ft_putstr(buffer);
     }
+    return (TRUE);
 }

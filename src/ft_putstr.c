@@ -6,7 +6,7 @@
 /*   By: scombat <scombat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/18 12:56:52 by scombat           #+#    #+#             */
-/*   Updated: 2014/03/18 12:59:16 by scombat          ###   ########.fr       */
+/*   Updated: 2015/12/17 22:47:12 by scombat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,6 @@
 
 void	ft_putstr(char const *s)
 {
-	write(1, s, ft_strlen(s));
+    if (s)
+        write(1, s, ft_strlen(s));
 }

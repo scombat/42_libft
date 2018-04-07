@@ -6,7 +6,7 @@
 /*   By: scombat <scombat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/16 19:32:49 by scombat           #+#    #+#             */
-/*   Updated: 2014/03/16 19:41:07 by scombat          ###   ########.fr       */
+/*   Updated: 2015/12/14 22:22:35 by scombat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	const char	*tmp_src;
 	char		*rslt;
 
-	if (dst && src && n > 0)
+	if (n > 0)
 	{
 		tmp_src = src;
 		rslt = dst;
